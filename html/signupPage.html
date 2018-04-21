@@ -34,6 +34,7 @@
     max-width: 240px;
     height: 40px;
     margin: 0 auto;
+    margin-bottom: 10px;
   }
 
   .loginForm input[type=button] {
@@ -54,21 +55,58 @@
     };
     }
 
+    dateChanged(event) {
+      this.setState({date: event.target.value});
+    }
+
     renderInputs() {
       if (this.state.isBusiness) {
         return (
-          <input type="text" id="name" value={this.state.city}
+          <React.Fragment>
+             <input type="text" id="name" value={this.state.address}
+              onChange={(e) => this.setState({address: e.target.value})}
+              className="form-control"
+              placeholder={"Address"}/>
+            <input type="text" id="name" value={this.state.city}
               onChange={(e) => this.setState({city: e.target.value})}
               className="form-control"
-              placeholder={"city"}/>
+              placeholder={"City"}/>
+              <input type="text" id="name" value={this.state.state}
+              onChange={(e) => this.setState({state: e.target.value})}
+              className="form-control"
+              placeholder={"State"}/>
+              <input type="text" id="name" value={this.state.zip}
+              onChange={(e) => this.setState({zip: e.target.value})}
+              className="form-control"
+              placeholder={"ZIP"}/>
+          </React.Fragment>
       );
       }
       else {
         return (
-          <input type="text" id="name" value={this.state.expertise}
-              onChange={(e) => this.setState({expertise: e.target.value})}
+          <React.Fragment>
+              <input type="date" className="form-control" onChange={this.dateChanged.bind(this)} />
+              <input type="text" id="name" value={this.state.city}
+              onChange={(e) => this.setState({city: e.target.value})}
               className="form-control"
-              placeholder={"Expertise"}/>
+              placeholder={"City"}/>
+              <input type="text" id="name" value={this.state.expertise}
+                onChange={(e) => this.setState({expertise: e.target.value})}
+                className="form-control"
+                placeholder={"Expertise"}/>
+                <input type="text" id="name" value={this.state.yearsOfExperience}
+                onChange={(e) => this.setState({yearsOfExperience: e.target.value})}
+                className="form-control"
+                placeholder={"Years of Experience"}/>
+                <input type="text" id="name" value={this.state.phoneNumber}
+                onChange={(e) => this.setState({phoneNumber: e.target.value})}
+                className="form-control"
+                placeholder={"Phone Number"}/>
+                <input type="text" id="name" value={this.state.email}
+                onChange={(e) => this.setState({email: e.target.value})}
+                className="form-control"
+                placeholder={"Email"}/>
+          </React.Fragment>
         )
       }
     }
@@ -110,7 +148,6 @@
 </nav>
         <div style={{
             minWidth: 400,
-            height: 300,
             marginLeft: "25%",
             marginRight: "25%",
             marginTop: 60,
