@@ -1,4 +1,4 @@
-body {
+  body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
@@ -16,6 +16,9 @@ body {
       color: #303030;
       font-weight: 400;
       margin-bottom: 30px;
+  }
+  .container {
+    padding: 16px;
   }  
   .jumbotron {
       background-color: #f4511e;
