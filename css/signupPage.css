@@ -1,0 +1,26 @@
+a:hover {
+  text-decoration: none
+}
+
+.login-label {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.caption {
+  margin-bottom: 50px;
+}
+
+.form-control {
+  width: 50%;
+  max-width: 240px;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.loginForm input[type=button] {
+  background: #fb044a;
+  color: #fff;
+  font-weight: 700;
+}
