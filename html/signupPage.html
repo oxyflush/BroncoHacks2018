@@ -48,7 +48,29 @@
   class Toggle extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {username: "", password: "", isBusiness: false};
+      this.state = {username: "",
+      password: "",
+      isBusiness: false,
+    };
+    }
+
+    renderInputs() {
+      if (this.state.isBusiness) {
+        return (
+          <input type="text" id="name" value={this.state.city}
+              onChange={(e) => this.setState({city: e.target.value})}
+              className="form-control"
+              placeholder={"city"}/>
+      );
+      }
+      else {
+        return (
+          <input type="text" id="name" value={this.state.expertise}
+              onChange={(e) => this.setState({expertise: e.target.value})}
+              className="form-control"
+              placeholder={"Expertise"}/>
+        )
+      }
     }
 
     render() {
@@ -118,6 +140,7 @@
               onChange={(e) => this.setState({username: e.target.value})}
               className="form-control"
               placeholder={this.state.isBusiness ? "Business Name" : "Full name"}/>
+            {this.renderInputs()}
 						<input type="password" id="paw" value={this.state.password}
               onChange={(e) => this.setState({password: e.target.value})}
               className="form-control"
