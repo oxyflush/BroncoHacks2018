@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<div id="root"></div>
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<title>Prisoner Matchmaking</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../js/smoothScrolling.js"></script>
+<link rel="stylesheet" href="../css/site.css">
+
+<style>
+  a:hover {
+    text-decoration: none
+  }
+
+  .login-label {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .caption {
+    margin-bottom: 50px;
+  }
+
+  .form-control {
+    width: 50%;
+    max-width: 240px;
+    height: 40px;
+    margin: 0 auto;
+  }
+
+  .loginForm input[type=button] {
+    background: #fb044a;
+    color: #fff;
+    font-weight: 700;
+  }
+</style>
+<script type="text/babel">
+<div id="root"></div>
+  
+  class Toggle extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {username: "", password: "", isBusiness: false};
+    }
+
+    render() {
+
+      return (
+          <React.Fragment>
+              <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#about">ABOUT</a>
+        </li>
+        <li>
+          <a href="#services">SERVICES</a>
+        </li>
+        <li>
+          <a href="#portfolio">PORTFOLIO</a>
+        </li>
+        <li>
+          <a href="#pricing">PRICING</a>
+        </li>
+        <li>
+          <a href="#contact">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        <div style={{
+            minWidth: 400,
+            height: 300,
+            marginLeft: "25%",
+            marginRight: "25%",
+            marginTop: 60,
+            border: "1px solid black"
+        }} >
+        <div>
+					<div className="login-label">Login</div>
+				</div>
+        <div style={{display: "flex" , justifyContent: "center"}} >
+          <input type = "radio"
+                 name = "radSize"
+                 id = "sizeSmall"
+                 value = "small"
+                 checked = {!this.state.isBusiness}
+                 onClick={() => this.setState({isBusiness: false})} />
+          <label for = "sizeSmall">Prisoner</label>
+          <input type = "radio"
+                 name = "radSize"
+                 id = "sizeMed"
+                 value = "medium"
+                 checked = {this.state.isBusiness}
+                 onClick={() => this.setState({isBusiness: true})} />
+          <label for = "sizeMed">Business</label>
+          </div>
+				<form action="" className="loginForm" >
+						<input type="text" id="name" value={this.state.username}
+              onChange={(e) => this.setState({username: e.target.value})}
+              className="form-control"
+              placeholder={this.state.isBusiness ? "Business Name" : "Full name"}/>
+						<input type="password" id="paw" value={this.state.password}
+              onChange={(e) => this.setState({password: e.target.value})}
+              className="form-control"
+              placeholder="Password"/>
+						<input type="button" id="submit"
+            className="form-control" value="Submit"
+            onClick={() => alert(`username:${this.state.username}\npassword:${this.state.password}`)} />
+				</form>
+
+        </div>
+        </React.Fragment>
+      );
+    }
+  }
+  
+    ReactDOM.render(
+      <Toggle/>,
+      document.getElementById('root')
+    );
+</script>
+
+</html>
