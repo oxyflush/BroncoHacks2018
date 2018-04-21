@@ -39,7 +39,7 @@
   class Toggle extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {username: "", password: ""};
+      this.state = {username: "", password: "", isBusiness: false};
     }
 
     render() {
@@ -60,14 +60,32 @@
 				<div className="caption">
 					<div className="login-label">Login</div>
 				</div>
+        <div style={{display: "flex" , justifyContent: "center"}} >
+          <input type = "radio"
+                 name = "radSize"
+                 id = "sizeSmall"
+                 value = "small"
+                 checked = {!this.state.isBusiness}
+                 onClick={() => this.setState({isBusiness: false})} />
+          <label for = "sizeSmall">Prisoner</label>
+          <input type = "radio"
+                 name = "radSize"
+                 id = "sizeMed"
+                 value = "medium"
+                 checked = {this.state.isBusiness}
+                 onClick={() => this.setState({isBusiness: true})} />
+          <label for = "sizeMed">Business</label>
+          </div>
 				<form action="" className="loginForm">
 					<div className="input-group">
 						<input type="text" id="name" value={this.state.username}
-            onChange={(e) => this.setState({username: e.target.value})}
-            className="form-control" placeholder="Full Name"/>
+              onChange={(e) => this.setState({username: e.target.value})}
+              className="form-control"
+              placeholder={this.state.isBusiness ? "Business Name" : "Full name"}/>
 						<input type="password" id="paw" value={this.state.password}
-            onChange={(e) => this.setState({password: e.target.value})}
-            className="form-control" placeholder="Password"/>
+              onChange={(e) => this.setState({password: e.target.value})}
+              className="form-control"
+              placeholder="Password"/>
 						<input type="button" id="submit"
             className="form-control" value="Submit"
             onClick={() => alert(`username:${this.state.username}\npassword:${this.state.password}`)} />
