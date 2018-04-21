@@ -27,7 +27,7 @@
     margin-right: 25%;
   }
 
-  .loginForm input[type=submit] {
+  .loginForm input[type=button] {
     background: #fb044a;
     color: #fff;
     font-weight: 700;
@@ -62,12 +62,15 @@
 				</div>
 				<form action="" className="loginForm">
 					<div className="input-group">
-						<input type="text" id="name"
+						<input type="text" id="name" value={this.state.username}
+            onChange={(e) => this.setState({username: e.target.value})}
             className="form-control" placeholder="Full Name"/>
-						<input type="password" id="paw"
+						<input type="password" id="paw" value={this.state.password}
+            onChange={(e) => this.setState({password: e.target.value})}
             className="form-control" placeholder="Password"/>
-						<input type="submit" id="submit"
-            className="form-control" value="Submit"/>
+						<input type="button" id="submit"
+            className="form-control" value="Submit"
+            onClick={() => alert(`username:${this.state.username}\npassword:${this.state.password}`)} />
 					</div>
 				</form>
 			</div>
