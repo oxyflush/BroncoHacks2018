@@ -6,6 +6,32 @@
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
 <style>
+  a:hover {
+    text-decoration: none
+  }
+
+  .login-label {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .caption {
+    margin-bottom: 50px;
+  }
+
+  .form-control {
+    width: 50%;
+    max-width: 240px;
+    height: 40px;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .loginForm input[type=submit] {
+    background: #fb044a;
+    color: #fff;
+    font-weight: 700;
+  }
 </style>
 <script type="text/babel">
 <div id="root"></div>
@@ -13,7 +39,7 @@
   class Toggle extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {};
+      this.state = {username: "", password: ""};
     }
 
     render() {
@@ -22,23 +48,26 @@
           <React.Fragment>
         <div style={{
             minWidth: 400,
-            height: 200,
+            height: 300,
             marginLeft: "25%",
             marginRight: "25%",
             border: "1px solid black"
         }} >
-        <div class="container">
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4 text-center">
-			<div class="search-box">
-				<div class="caption">
-					<h3>Login</h3>
+        <div className="container">
+	<div className="row">
+		<div className="col-md-4 col-md-offset-4 text-center">
+			<div className="search-box">
+				<div className="caption">
+					<div className="login-label">Login</div>
 				</div>
-				<form action="" class="loginForm">
-					<div class="input-group">
-						<input type="text" id="name" class="form-control" placeholder="Full Name"/>
-						<input type="password" id="paw" class="form-control" placeholder="Password"/>
-						<input type="submit" id="submit" class="form-control" value="Submit"/>
+				<form action="" className="loginForm">
+					<div className="input-group">
+						<input type="text" id="name"
+            className="form-control" placeholder="Full Name"/>
+						<input type="password" id="paw"
+            className="form-control" placeholder="Password"/>
+						<input type="submit" id="submit"
+            className="form-control" value="Submit"/>
 					</div>
 				</form>
 			</div>
