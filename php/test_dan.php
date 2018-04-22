@@ -2,10 +2,10 @@
 <?php 
 $conn=oci_connect('aniu','Damnright1','//dbserver.engr.scu.edu/db11g');
 if($conn) {
-  print "<br> connection successful";
+  print "<br> connection success";
 } else {
   $e=oci_error;
-  print "<br> connection failed:";
+  print "<br> connection fail:";
   print htmlentities($e['message']);
   exit;
 }
@@ -48,4 +48,3 @@ echo "</TABLE>";
 OCIFreeStatement($sql_statement);
 OCILogoff($conn);
 ?></html>
-

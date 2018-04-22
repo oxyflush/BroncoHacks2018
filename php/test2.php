@@ -2,10 +2,10 @@
 <?php 
 $conn=oci_connect('aniu','Damnright1','//dbserver.engr.scu.edu/db11g');
 if($conn) {
-  print "<br> connection successful";
+  print "<br> connection success";
 } else {
   $e=oci_error;
-  print "<br> connection failed:";
+  print "<br> connection fail:";
   print htmlentities($e['message']);
   exit;
 }
@@ -13,10 +13,10 @@ if($conn) {
 
 echo "<BR/>";
 echo "<br>";
-echo "</TR><TH> Get Business Name<TH>";
+echo "</TR><TH> Get People Name<TH>";
 echo "<BR/>";
 
-$sql="SELECT * from business";
+$sql="SELECT * from people";
 
 echo "<BR/>";
 echo "</TR><TH>-- Parsing<TH>";
@@ -33,7 +33,7 @@ echo "</TR><TH>
 Obtaining results<TH>";
 // start results formatting
 echo "<TABLE BORDER=1>";
-echo              "<TR><TH>ID              Number</TH><TH>Company Name</TH><TH>Size</TH><TH>Industry</TH>";
+echo              "<TR><TH>ID              </TH><TH> Name</TH><TH>Age</TH><TH>Job Interest</TH>";
 // format results by row
 while (OCIFetch($sql_statement)){
 echo "<TR>";
@@ -48,4 +48,3 @@ echo "</TABLE>";
 OCIFreeStatement($sql_statement);
 OCILogoff($conn);
 ?></html>
-
