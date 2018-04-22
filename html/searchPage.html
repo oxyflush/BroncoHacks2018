@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang=en>
+  <head>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  <script type="text/javascript">$('a[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  }
+});</script>
+  <title>PrisonerMatchmaking - Search</title>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+</head>
+
+  <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="Home2.html">HOME</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home2.html#abt">ABOUT</a></li>
+        <li><a href="Search.html">VOLUNTEER</a></li>
+        <li><a href="Home2.html#help">ASK FOR HELP</a></li>
+        <li><a href="Home2.html#cont">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <center><h1>PrisonerMatchmaking</h1>
+  <p>We provide you with the opportunity to hire former prisoners.</p><br>
+  <form class="form-inline">
+    <div class="input-group">
+      <div class="form-group">
+    <input type = "text" size="75" onkeyup = "myFunction()"class="form-control" id="myInput" rows="1" placeholder="Search..."></textarea>
+  </div></div>
+
+    <br><br>
+<label class="radio-inline"><input type="radio" name="optradio" id = "b">Location</label>
+<label class="radio-inline"><input type="radio" name="optradio" id = "c">Job</label>
+<label class="radio-inline"><input type="radio" name="optradio" id = "d">Date</label>
+<label class="radio-inline"><input type="radio" name="optradio" id = "e">Date Created</label>
+    </div>
+
+  </form>
+
+  <div class="container">
+</div>
+</div>
+<table class="Results" border="1" id="myTable">
+  <tr>
+   <!--Header of prisoner attributes-->
+    <th>Name</th>
+    <th>Job Type</th>
+    <th>Location</th>
+    <th>Years of experience</th>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 1</td>
+    <td class="Data">Job Type 1</td>
+    <td class="Data">Place 1</td>
+    <td class="Data">Years 1</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 2</td>
+    <td class="Data">Job Type 2</td>
+    <td class="Data">Place 2</td>
+    <td class="Data">Years 2</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 3</td>
+    <td class="Data">Job Type 3</td>
+    <td class="Data">Place 3</td>
+    <td class="Data">Years 3</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 4</td>
+    <td class="Data">Job Type 4</td>
+    <td class="Data">Place 4</td>
+    <td class="Data">Years 4</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 5</td>
+    <td class="Data">Job Type 5</td>
+    <td class="Data">Place 5</td>
+    <td class="Data">Years 5</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 6</td>
+    <td class="Data">Job Type 6</td>
+    <td class="Data">Place 6</td>
+    <td class="Data">Years 6</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 7</td>
+    <td class="Data">Job Type 7</td>
+    <td class="Data">Place 7</td>
+    <td class="Data">Years 7</td>
+  </tr>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 8</td>
+    <td class="Data">Job Type 8</td>
+    <td class="Data">Place 8</td>
+    <td class="Data">Years 8</td>
+  </tr>
+</table></center></div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Volunteer</h4>
+        </div>
+        <div class="modal-body">
+        <form action="Home2.php" method = "post" style="text-align:left;">
+       <div class="form-inline">
+    <label for="exampleTextarea">Name</label><br>
+    <textarea class="form-control" id="Name" name = "name" rows="1" placeholder="Enter full name"></textarea><br>
+    <label for="exampleTextarea">Email</label><br>
+    <textarea class="form-control" id="Email" name = email rows="1" placeholder="Enter email"></textarea><br>
+    <small id="contact" class="form-text text-muted">We'll never share your email with anyone else.</small><br>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleTextarea">Personal Description</label>
+    <textarea class="form-control" id="Description" name = "description" rows="1" placeholder="Describe yourself"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Phone Number</label>&nbsp;
+    <textarea class="form-control" id="date" name = "date" rows="1" placeholder="xxx.xxx.xxxx"></textarea>&nbsp;
+  </div>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+<br>
+
+    <script>
+    //Search function
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, user;
+  if(document.getElementById('a').checked) {
+    user = 0;
+  }
+  else if(document.getElementById('b').checked) {
+    user = 1;
+  }
+  else if(document.getElementById('c').checked) {
+    user = 2;
+  }
+  else if(document.getElementById('d').checked) {
+    user = 3;
+  }
+  else if(document.getElementById('e').checked) {
+    user = 4;
+  }
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  var userChoice = 0;
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[user]; //Decides which column is searched 0-(n-1)
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+</body>
+
+</html>
