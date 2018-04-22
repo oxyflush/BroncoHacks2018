@@ -16,11 +16,15 @@ if (isset($_POST['userName'])) {
         $userName = $_POST['userName'];
         $age = $_POST['age'];
         $password = $_POST['password'];
-        echo $userName;
         $insertIntoPeople = "insert into business values($userId,'$userName',$age,'$password')";
         $sql_statement = OCIParse($conn,$insertIntoPeople);
         echo $insertIntoPeople;
 OCIExecute($sql_statement);
+} else if (isset($_POST['delete'])) {
+        $userId = $_POST['delete'];
+        $deletePerson = "delete from business where ID=$userId";
+        $sql_statement = OCIParse($conn,$deletePerson);
+        OCIExecute($sql_statement);
 }
 
 $danVar = '';
@@ -62,12 +66,23 @@ Obtaining results<TH>";
 echo "<TABLE BORDER=1>";
 echo              "<TR><TH>ID              Number</TH><TH>Company Name</TH><TH>Size</TH><TH>Industry</TH>";
 // format results by row
+echo "
+<script>
+function delete(id_num) {
+    alert(id_num);
+}
+</script>
+";
 while (OCIFetch($sql_statement)){
 echo "<TR>";
 for ($i = 1; $i <= $num_columns; $i++) {
 $column_value = OCIResult($sql_statement,$i);
 echo "<TD>$column_value</TD>";
 }
+$id_num = OCIResult($sql_statement,1);
+echo "<TD><form action = '' method = 'post'>
+        <button name='delete' value='$id_num'>Delete</button>
+    </form></TD>";
 echo "</TR>";
 }
 echo "</TABLE>";
