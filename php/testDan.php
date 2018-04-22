@@ -1,5 +1,5 @@
-<html>
-<?php
+<html> 
+<?php 
 $conn=oci_connect('aniu','Damnright1','//dbserver.engr.scu.edu/db11g');
 if($conn) {
   print "<br> connection successDan";
@@ -12,19 +12,19 @@ if($conn) {
 
 //dan-start
 if (isset($_POST['userName'])) {
-        $userId = $_POST['userId'];
-        $userName = $_POST['userName'];
-        $age = $_POST['age'];
-        $password = $_POST['password'];
-        $insertIntoPeople = "insert into business values($userId,'$userName',$age,'$password')";
-        $sql_statement = OCIParse($conn,$insertIntoPeople);
-        echo $insertIntoPeople;
+	$userId = $_POST['userId'];
+	$userName = $_POST['userName'];
+	$age = $_POST['age'];
+	$password = $_POST['password'];
+	$insertIntoPeople = "insert into business values($userId,'$userName',$age,'$password')";
+	$sql_statement = OCIParse($conn,$insertIntoPeople);
+	echo $insertIntoPeople;
 OCIExecute($sql_statement);
 } else if (isset($_POST['delete'])) {
-        $userId = $_POST['delete'];
-        $deletePerson = "delete from business where ID=$userId";
-        $sql_statement = OCIParse($conn,$deletePerson);
-        OCIExecute($sql_statement);
+	$userId = $_POST['delete'];
+	$deletePerson = "delete from business where ID=$userId";
+	$sql_statement = OCIParse($conn,$deletePerson);
+	OCIExecute($sql_statement);
 }
 
 $danVar = '';
@@ -81,7 +81,7 @@ echo "<TD>$column_value</TD>";
 }
 $id_num = OCIResult($sql_statement,1);
 echo "<TD><form action = '' method = 'post'>
-        <button name='delete' value='$id_num'>Delete</button>
+	<button name='delete' value='$id_num'>Delete</button>
     </form></TD>";
 echo "</TR>";
 }
