@@ -18,7 +18,7 @@ echo "</TR><TH> Get Count Values Company  Name<TH>";
 echo "<BR/>";
 echo '
 <button onclick="myFunction()">Click me </button>';
-$sql="select company_name, count(id) from business group by company_name";
+$sql="select name,industry from people,business where people.job_interest=business.industry";
 echo "<BR/>";
 echo "</TR><TH>-- Parsing<TH>";
 $sql_statement=OCIParse($conn,$sql); #parse through database
@@ -32,7 +32,7 @@ echo "</TR><TH>
 Obtaining results<TH>";
 // start results formatting
 echo "<TABLE BORDER=1>";
-echo              "<TR><TH>Company Name</TH><TH>SIZE</TH>";
+echo              "<TR><TH> Name</TH><TH>Industry Match</TH>";
 // format results by row
 while (OCIFetch($sql_statement)){
 echo "<TR>";
