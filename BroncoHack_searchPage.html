@@ -72,7 +72,8 @@
     <input type = "text" size="75" onkeyup = "myFunction()"class="form-control" id="myInput" rows="1" placeholder="Search..."></textarea>
   </div></div>
 
-        <br><br><label class="radio-inline"><input type="radio" name="optradio" id = "a" checked>Name/Organization</label>
+        <br><br>
+        <label class="radio-inline"><input type="radio" name="optradio" id = "a" checked>Name/Organization</label>
 <label class="radio-inline"><input type="radio" name="optradio" id = "b">Location</label>
 <label class="radio-inline"><input type="radio" name="optradio" id = "c">Job</label>
 <label class="radio-inline"><input type="radio" name="optradio" id = "d">Date</label>
@@ -92,53 +93,53 @@
     <th>Job Type</th>
     <th>Years of experience</th>
   </tr>
-  <tr>
-    <td>Name 1</td>
-    <td>Job Type 1</td>
-    <td>Place 1</td>
-    <td>Years 1</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 1</td>
+    <td class="Data">Job Type 1</td>
+    <td class="Data">Place 1</td>
+    <td class="Data">Years 1</td>
   </tr>
-  <tr>
-    <td>Name 2</td>
-    <td>Job Type 2</td>
-    <td>Place 2</td>
-    <td>Years 2</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 2</td>
+    <td class="Data">Job Type 2</td>
+    <td class="Data">Place 2</td>
+    <td class="Data">Years 2</td>
   </tr>
-  <tr>
-    <td>Name 3</td>
-    <td>Place 3</td>
-    <td>Job Type 3</td>
-    <td>Years 3</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 3</td>
+    <td class="Data">Place 3</td>
+    <td class="Data">Job Type 3</td>
+    <td class="Data">Years 3</td>
   </tr>
-  <tr>
-    <td>Name 4</td>
-    <td>Place 4</td>
-    <td>Job Type 4</td>
-    <td>Years 4</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 4</td>
+    <td class="Data">Place 4</td>
+    <td class="Data">Job Type 4</td>
+    <td class="Data">Years 4</td>
   </tr>
-  <tr>
-    <td>Name 5</td>
-    <td>Place 5</td>
-    <td>Years 5</td>
-    <td>Job Type 5</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 5</td>
+    <td class="Data">Place 5</td>
+    <td class="Data">Years 5</td>
+    <td class="Data">Job Type 5</td>
   </tr>
-  <tr>
-    <td>Name 6</td>
-    <td>Years 6</td>
-    <td>Place 6</td>
-    <td>Job Type 6</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 6</td>
+    <td class="Data">Years 6</td>
+    <td class="Data">Place 6</td>
+    <td class="Data">Job Type 6</td>
   </tr>
-  <tr>
-    <td>Name 7</td>
-    <td>Job Type 7</td>
-    <td>Place 7</td>
-    <td>Years 7</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 7</td>
+    <td class="Data">Job Type 7</td>
+    <td class="Data">Place 7</td>
+    <td class="Data">Years 7</td>
   </tr>
-  <tr>
-    <td>Name 8</td>
-    <td>Job Type 8</td>
-    <td>Years 8</td>
-    <td>Place 8</td>
+  <tr class="DataRow" class="Data">
+    <td class="Data">Name 8</td>
+    <td class="Data">Job Type 8</td>
+    <td class="Data">Years 8</td>
+    <td class="Data">Place 8</td>
   </tr>
 </table></center></div>
   <!-- Modal -->
@@ -241,6 +242,7 @@ function sortTable(n) {
 <br>
 
     <script>
+    //Search function
 function myFunction() {
   // Declare variables
   var input, filter, table, tr, td, i, user;
@@ -278,28 +280,6 @@ function myFunction() {
 }
 </script>
 
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 </body>
 
 </html>
