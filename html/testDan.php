@@ -14,8 +14,8 @@ if (isset($_POST['userName'])) {
 	$userId = $_POST['userId'];
 	$userName = $_POST['userName'];
 	$age = $_POST['age'];
-	$password = $_POST['password'];
-	$insertIntoPeople = "insert into business values($userId,'$userName',$age,'$password')";
+	$expertise = $_POST['expertise'];
+	$insertIntoPeople = "insert into business values($userId,'$userName',$age,'$expertise')";
 	$sql_statement = OCIParse($conn,$insertIntoPeople);
 	echo $insertIntoPeople;
 OCIExecute($sql_statement);
@@ -34,7 +34,7 @@ COMPANY NAME <input type="text" name = "userName" >
 <br>
 SIZE <input type="text" name = "age" >
 <br>
-INDUSTRY <input type="text" name = "password" >
+INDUSTRY <input type="text" name = "expertise" >
 <br>
 <input type = "submit" value = "submit">
 </form>';
