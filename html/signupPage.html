@@ -74,6 +74,13 @@
                 });
 }
 
+  renderExpertises() {
+      let expertises = ["Please select expertise", "Engineering", "Business", "Law", "Arts"]
+      let returnVal = expertises.map((expertise, idx) => {
+          return (<option value={expertise}>{expertise}</option>)
+        });
+        return returnVal;
+    }
     renderInputs() {
       if (this.state.isBusiness) {
         return (
@@ -105,10 +112,10 @@
               onChange={(e) => this.setState({city: e.target.value})}
               className="form-control"
               placeholder={"City"}/>
-              <input type="text" id="name" value={this.state.expertise}
-                onChange={(e) => this.setState({expertise: e.target.value})}
-                className="form-control"
-                placeholder={"Expertise"}/>
+              <select className="form-control" id="dropdown"
+              onChange={(e) => this.setState({expertise: e.target.value})}>
+                {this.renderExpertises()}
+            </select>
                 <input type="text" id="name" value={this.state.yearsOfExperience}
                 onChange={(e) => this.setState({yearsOfExperience: e.target.value})}
                 className="form-control"

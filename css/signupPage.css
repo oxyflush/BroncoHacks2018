@@ -1,5 +1,5 @@
 a:hover {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .login-label {
@@ -19,7 +19,7 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.loginForm input[type=button] {
+.loginForm input[type="button"] {
   background: #fb044a;
   color: #fff;
   font-weight: 700;
