@@ -12,10 +12,11 @@ if($conn) {
 
 
 echo "<BR/>";
-echo "</TR><TH> Get Prisoner Name<TH>";
+echo "<br>";
+echo "</TR><TH> Get Business Name<TH>";
 echo "<BR/>";
 
-$sql="SELECT * from t";
+$sql="SELECT * from business";
 
 echo "<BR/>";
 echo "</TR><TH>-- Parsing<TH>";
@@ -32,10 +33,9 @@ echo "</TR><TH>
 Obtaining results<TH>";
 // start results formatting
 echo "<TABLE BORDER=1>";
-echo              "<TR><TH>Customer              Number</TH><TH>Customer Name</TH><TH>Street</TH><TH>City</TH>";
+echo              "<TR><TH>ID              Number</TH><TH>Company Name</TH><TH>Size</TH><TH>Industry</TH>";
 // format results by row
-while 
-(OCIFetch($sql_statement)){
+while (OCIFetch($sql_statement)){
 echo "<TR>";
 for ($i = 1; $i <= $num_columns; $i++) {
 $column_value = OCIResult($sql_statement,$i);
