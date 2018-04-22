@@ -209,7 +209,9 @@ echo "
             border: '1px solid black'
         }} >
         <div>
-					<div className='login-label'>Sign Up</div>
+					{this.state.isBusiness ? 
+	(<a className='login-label' href='./testDan.php' >Sign Up</a>)
+ : (<a className='login-label' href='./test2.php' >Sign Up</a>)}
 				</div>
         <div style={{display: 'flex' , justifyContent: 'center'}} >
           <input type = 'radio'
@@ -242,6 +244,7 @@ echo "
 						<input type='button' id='submit'
             className='form-control' value='Submit'
              />
+			<a className='login-label' href='./almatest.php' >connection</a>
 				</form>
 
         </div>
